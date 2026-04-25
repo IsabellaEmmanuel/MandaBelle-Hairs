@@ -1,28 +1,28 @@
 import { useEffect, useMemo, useState } from 'react'
 import { NavLink, Route, Routes, useLocation } from 'react-router-dom'
-import logo from '../assets/mb-logo.png'
 
 const whatsappUrl = 'https://wa.me/2349035723731'
+const logo = null // Logo file not present
 const silkBaseImage = new URL('../assets/Pictures/human hair straight-HD frontal.jpeg', import.meta.url).href
 const gluelessBobImage = new URL('../assets/Pictures/bone-straight short bob.jpeg', import.meta.url).href
-const honeyBlondeImage = new URL('../assets/Pictures/brown-bounce human hair.jpeg', import.meta.url).href
+const honeyBlondeImage = new URL('../assets/Pictures/brown bounce-tip hair.jpeg', import.meta.url).href
 const deepWaveImage = new URL('../assets/Pictures/burgundy-straight lace frontal.jpeg', import.meta.url).href
-const pixieImage = new URL('../assets/Pictures/unique pixie-curls human hair.jpeg', import.meta.url).href
+const pixieImage = new URL('../assets/Pictures/unique pixie-curls human hair (2).jpeg', import.meta.url).href
 const midnightStraightImage = new URL('../assets/Pictures/yaki-straight.jpeg', import.meta.url).href
-const teamSarahImage = new URL('../assets/Pictures/black-brown bouncy human hair.jpeg', import.meta.url).href
+const teamSarahImage = new URL('../assets/Pictures/black-brown body bounce.jpeg', import.meta.url).href
 const teamMichaelImage = new URL('../assets/Pictures/black-brown loose bounce human hair.jpeg', import.meta.url).href
-const teamAminaImage = new URL('../assets/Pictures/human hair burmese-curls.jpeg', import.meta.url).href
-const aboutPosterImage = new URL('../assets/Pictures/human-hair straight lace frontal.jpeg', import.meta.url).href
+const teamAminaImage = new URL('../assets/Pictures/burmese-deep human hair.jpeg', import.meta.url).href
+const aboutPosterImage = new URL('../assets/Pictures/pure human hair straight.jpeg', import.meta.url).href
 const gallerySecondImage = new URL('../assets/Pictures/jerry-curl human hair.jpeg', import.meta.url).href
-const galleryThirdImage = new URL('../assets/Pictures/jerry curl lace frontal.jpeg', import.meta.url).href
+const galleryThirdImage = new URL('../assets/Pictures/bone-straight lace frontal.jpeg', import.meta.url).href
 const galleryFourthImage = new URL('../assets/Pictures/natural pixie-curls lace frontal.jpeg', import.meta.url).href
 const featureVideo = new URL('../assets/Videos/body-wave human hair.mp4', import.meta.url).href
-const aboutVideo = new URL('../assets/Videos/natural pure afro hair.mp4', import.meta.url).href
+const aboutVideo = new URL('../assets/Videos/afro hair.mp4', import.meta.url).href
 const bestsellerVideo = new URL('../assets/Videos/natural burmese-curl hair.mp4', import.meta.url).href
 const galleryVideoOne = new URL('../assets/Videos/360 lace straight frontal.mp4', import.meta.url).href
-const galleryVideoTwo = new URL('../assets/Videos/black-brown bounce tip hair.mp4', import.meta.url).href
+const galleryVideoTwo = new URL('../assets/Videos/bounce-tip lace frontal.mp4', import.meta.url).href
 const galleryVideoThree = new URL('../assets/Videos/burgundy deep-wave.mp4', import.meta.url).href
-const galleryVideoFour = new URL('../assets/Videos/bone-straight bob hair.mp4', import.meta.url).href
+const galleryVideoFour = new URL('../assets/Videos/coloured bone-straight.mp4', import.meta.url).href
 const galleryVideoFive = new URL('../assets/Videos/coloured bold-spring curl hair.mp4', import.meta.url).href
 const galleryVideoSix = new URL('../assets/Videos/yaki-straight lace frontal.mp4', import.meta.url).href
 const editorPictureModules = import.meta.glob('../assets/Pictures/*.{jpeg,jpg,png,webp}', {
@@ -55,7 +55,7 @@ const featuredProducts = [
   },
   {
     category: 'Color Edition',
-    name: 'brown-bounce human hair',
+    name: 'brown bounce-tip hair',
     detail: 'Bright, voluminous curls with a lightweight feel and full glam impact.',
     price: '₦345k - ₦780k',
     length: '14 inches - 32 inches',
@@ -73,7 +73,7 @@ const featuredProducts = [
   },
   {
     category: 'Short & Sassy',
-    name: 'unique pixie-curls human hair',
+    name: 'unique pixie-curls human hair (2)',
     detail: 'Low-maintenance, high-style texture with a tailored finish straight out of the box.',
     price: '₦375k - ₦860k',
     length: '14 inches - 32 inches',
@@ -203,7 +203,7 @@ const galleryVideos = [
     href: '/lace-front-wigs',
   },
   {
-    title: 'Bone-Straight Bob Hair',
+    title: 'Coloured Bone-Straight',
     detail: 'A short, wearable cut designed for effortless styling and confident daily wear.',
     video: galleryVideoFour,
     poster: gluelessBobImage,
@@ -288,7 +288,7 @@ function Layout({ children }) {
     <div className="site-shell">
       <header className="site-header">
         <NavLink to="/" className="brand-mark">
-          <img src={logo} alt="MandaBelle Hairs logo" className="brand-logo" />
+          {logo && <img src={logo} alt="MandaBelle Hairs logo" className="brand-logo" />}
           <div>
             <p className="brand-eyebrow">Luxury Wig Boutique</p>
             <p className="brand-title">MandaBelle Hairs</p>
@@ -312,7 +312,7 @@ function Layout({ children }) {
         <div className="footer-grid">
           <div className="footer-brand">
             <div className="brand-mark">
-              <img src={logo} alt="MandaBelle Hairs logo" className="brand-logo" />
+              {logo && <img src={logo} alt="MandaBelle Hairs logo" className="brand-logo" />}
               <div>
                 <p className="brand-eyebrow">Luxury Wig Boutique</p>
                 <p className="brand-title footer-brand-title">MandaBelle Hairs</p>
@@ -560,8 +560,8 @@ function ProductsPage() {
     <Layout>
       <section className="product-detail-page">
         <div className="product-breadcrumbs">
-          <span>Home</span>
-          <strong>All Products</strong>
+          <NavLink to="/">Home</NavLink>
+          <strong>Products</strong>
         </div>
 
         <div className="recommendation-grid">
@@ -609,6 +609,12 @@ function ProductsPage() {
 function CollectionPage({ page }) {
   return (
     <Layout>
+      <div className="product-breadcrumbs">
+        <NavLink to="/">Home</NavLink>
+        <NavLink to="/gallery">Gallery</NavLink>
+        <strong>{page.title}</strong>
+      </div>
+
       <section className="collection-page-hero">
         <div>
           <p className="section-tag">{page.eyebrow}</p>
@@ -684,6 +690,11 @@ function CollectionPage({ page }) {
 function GalleryPage() {
   return (
     <Layout>
+      <div className="product-breadcrumbs">
+        <NavLink to="/">Home</NavLink>
+        <strong>Gallery</strong>
+      </div>
+
       <section className="gallery-page-hero">
         <p className="section-tag">Video Gallery</p>
         <h1>Watch The Hair In Motion</h1>
@@ -864,6 +875,11 @@ function ProductEditorPage() {
 
   return (
     <Layout>
+      <div className="product-breadcrumbs">
+        <NavLink to="/">Home</NavLink>
+        <strong>Editor</strong>
+      </div>
+
       <section className="editor-page-hero">
         <p className="section-tag">Product Editor</p>
         <h1>Fill Product Details Beside Each File</h1>
@@ -936,6 +952,11 @@ function ProductEditorPage() {
 function ContactPage() {
   return (
     <Layout>
+      <div className="product-breadcrumbs">
+        <NavLink to="/">Home</NavLink>
+        <strong>Contact</strong>
+      </div>
+
       <section className="page-hero">
         <p className="section-tag">Contact Us</p>
         <h2>Ready to shop or ask a question? Let's talk on WhatsApp.</h2>
