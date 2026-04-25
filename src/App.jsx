@@ -7,7 +7,7 @@ const silkBaseImage = new URL('../assets/Pictures/human hair straight-HD frontal
 const gluelessBobImage = new URL('../assets/Pictures/bone-straight short bob.jpeg', import.meta.url).href
 const honeyBlondeImage = new URL('../assets/Pictures/brown bounce-tip hair.jpeg', import.meta.url).href
 const deepWaveImage = new URL('../assets/Pictures/burgundy-straight lace frontal.jpeg', import.meta.url).href
-const pixieImage = new URL('../assets/Pictures/unique pixie-curls human hair (2).jpeg', import.meta.url).href
+const pixieImage = new URL('../assets/Pictures/unique pixie-curls human hair.jpeg', import.meta.url).href
 const midnightStraightImage = new URL('../assets/Pictures/yaki-straight.jpeg', import.meta.url).href
 const teamSarahImage = new URL('../assets/Pictures/black-brown body bounce.jpeg', import.meta.url).href
 const teamMichaelImage = new URL('../assets/Pictures/black-brown loose bounce human hair.jpeg', import.meta.url).href
@@ -73,7 +73,7 @@ const featuredProducts = [
   },
   {
     category: 'Short & Sassy',
-    name: 'unique pixie-curls human hair (2)',
+    name: 'unique pixie-curls human hair',
     detail: 'Low-maintenance, high-style texture with a tailored finish straight out of the box.',
     price: '₦375k - ₦860k',
     length: '14 inches - 32 inches',
@@ -189,7 +189,7 @@ const galleryVideos = [
     href: '/bone-straight-wigs',
   },
   {
-    title: 'Black-Brown Bounce Tip Hair',
+    title: 'Bounce-Tip Lace Frontal',
     detail: 'Defined body waves with bounce, shine, and an easy premium drape.',
     video: galleryVideoTwo,
     poster: silkBaseImage,
