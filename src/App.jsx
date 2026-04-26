@@ -2,7 +2,7 @@ import { useEffect, useMemo, useState } from 'react'
 import { NavLink, Route, Routes, useLocation } from 'react-router-dom'
 
 const whatsappUrl = 'https://wa.me/2349035723731'
-const logo = null // Logo file not present
+const logo = new URL('../assets/MB Logo.png', import.meta.url).href
 const silkBaseImage = new URL('../assets/Pictures/human hair straight-HD frontal.jpeg', import.meta.url).href
 const gluelessBobImage = new URL('../assets/Pictures/bone-straight short bob.jpeg', import.meta.url).href
 const honeyBlondeImage = new URL('../assets/Pictures/brown bounce-tip hair.jpeg', import.meta.url).href
@@ -288,7 +288,7 @@ function Layout({ children }) {
     <div className="site-shell">
       <header className="site-header">
         <NavLink to="/" className="brand-mark">
-          {logo && <img src={logo} alt="MandaBelle Hairs logo" className="brand-logo" />}
+          <img src={logo} alt="MandaBelle Hairs logo" className="brand-logo" />
           <div>
             <p className="brand-eyebrow">Luxury Wig Boutique</p>
             <p className="brand-title">MandaBelle Hairs</p>
@@ -312,7 +312,7 @@ function Layout({ children }) {
         <div className="footer-grid">
           <div className="footer-brand">
             <div className="brand-mark">
-              {logo && <img src={logo} alt="MandaBelle Hairs logo" className="brand-logo" />}
+              <img src={logo} alt="MandaBelle Hairs logo" className="brand-logo" />
               <div>
                 <p className="brand-eyebrow">Luxury Wig Boutique</p>
                 <p className="brand-title footer-brand-title">MandaBelle Hairs</p>
