@@ -589,7 +589,7 @@ function ProductsPage() {
           {galleryVideos.map((video) => (
             <article key={video.title} className="recommendation-card">
               <div className="recommendation-visual">
-                <video className="recommendation-video" controls muted playsInline poster={video.poster}>
+                <video className="recommendation-video" autoPlay controls muted playsInline poster={video.poster}>
                   <source src={video.video} type="video/mp4" />
                 </video>
               </div>
@@ -720,7 +720,7 @@ function GalleryPage() {
       <section className="video-gallery-grid">
         {galleryVideos.map((item) => (
           <article key={item.title} className="video-card">
-            <video className="video-card-player" controls preload="metadata" poster={item.poster} muted playsInline>
+            <video className="video-card-player" autoPlay controls preload="metadata" poster={item.poster} muted playsInline>
               <source src={item.video} type="video/mp4" />
             </video>
             <div className="video-card-copy">
