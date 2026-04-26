@@ -998,14 +998,19 @@ main {
   font-size: 1rem;
 }
 
-.product-breadcrumbs span::after {
+.product-breadcrumbs a::after {
   content: '>';
   margin-left: 0.9rem;
   color: #a999bc;
 }
 
-.product-breadcrumbs strong {
-  color: var(--text);
+.product-breadcrumbs a {
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.product-breadcrumbs a:hover {
+  color: var(--primary);
 }
 
 .product-detail-layout {
